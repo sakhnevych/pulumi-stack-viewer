@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "project-1": "Project 1",
+    "project-2": "Project 2",
+    "project-3": "Project 3",
+    "project-4": "Project 4"
+  },
+  "environments": {
+    "sit": "SIT",
+    "qa": "QA",
+    "stage": "Stage",
+    "prod": "Prod"
+  },
+  "defaults": {
+    "project": "project-1",
+    "environment": "sit"
+  }
+}

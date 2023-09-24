@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulumi state</title>
+  <link type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link type="text/css" href="static/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container top-row">
+  <div class="block block-logo">
+    <img class="logo" src="static/logo.png" alt="The Pulumi logo">
+  </div>
+
+  <div class="block block-top-tabs">
+    <div class="project-dropdown">
+      <button id="project-dropdown-btn">...</button>
+      <div class="project-dropdown-options">
+        <!-- Project list is here -->
+      </div>
+    </div>
+
+
+    <ul class="env-tab">
+      <!-- Environment tabs are here -->
+    </ul>
+  </div>
+</div>
+
+<div class="container content-row">
+  <div class="block block-left-tabs">
+
+    <div class="state-dropdown">
+      <button id="choose-state-btn">...</button>
+      <div class="choose-state-dropdown">
+        <input class="choose-state-filter" type="text" placeholder="Search..">
+        <!-- State list is here -->
+      </div>
+    </div>
+    <br>
+
+
+    <div>
+      <ul class="view-tab">
+        <li class="active" rel="info">Information</li>
+        <li rel="stack">Stack view</li>
+        <li rel="preview">Detailed view</li>
+        <li rel="state">JSON state</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- The main content is put here -->
+  <div class="block block-content">
+
+    <!-- The view to show the plain background with a tip -->
+    <div class="content-tip" style="display: none">
+      <div id="content-tip-text"></div>
+    </div>
+
+    <!-- The view to show the error message -->
+    <div class="content-error" style="display: none">
+      <div id="content-error-message" class="error-title"></div>
+      <div id="content-error-tip" class="error-tip"></div>
+      <div id="content-error-content" class="error-content"></div>
+    </div>
+
+    <!-- The detailed view of the stack, parsed from the state.json file -->
+    <div class="content-info" style="display: none">
+      <div class="row header-row">
+        <div class="header-title">Project:</div>
+        <div class="header-value" id="info-header-project">project-1</div>
+        <div class="header-title">Env:</div>
+        <div class="header-value" id="info-header-env">env-1</div>
+        <div class="header-title">State:</div>
+        <div class="header-value" id="info-header-state">state</div>
+      </div>
+
+      <div class="row">
+        <h4>Pulumi stack details</h4>
+      </div>
+      <div class="row">
+        <div class="details-title">Created at:</div>
+        <div class="details-value" id="info-details-created-at">${createdAt}</div>
+      </div>
+      <div class="row">
+        <div class="details-title">Pulumi project:</div>
+        <div class="details-value" id="info-details-project">${pulumiProject}</div>
+      </div>
+      <div class="row">
+        <div class="details-title">Pulumi stack:</div>
+        <div class="details-value" id="info-details-stack">${pulumiStack}</div>
+      </div>
+      <div class="row">
+        <div class="details-title">Resources number:</div>
+        <div class="details-value" id="info-details-resource-counter">${resourceCounter}</div>
+      </div>
+
+      <div class="row">
+        <h4>Pulumi outputs</h4>
+      </div>
+      <div id="info-outputs">
+      </div>
+    </div>
+
+    <!-- The view for the file view in the iframe block -->
+    <div class="content-iframe" style="display: none">
+      <iframe id="iframe-file-content" title="File content"></iframe>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" type="text/javascript"></script>
+<script src="static/state.js" type="text/javascript"></script>
+</body>
+
+</html>
