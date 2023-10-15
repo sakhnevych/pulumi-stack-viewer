@@ -1,0 +1,1 @@
+The state of your Pulumi stacks goes to this directory.
