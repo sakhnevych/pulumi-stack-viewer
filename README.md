@@ -1,4 +1,5 @@
 # pulumi-stack-viewer
+
 The static web application to navigate the Pulumi state within your projects and environments.
 
 It may be useful if you don't use Pulumi service with their beautiful UI.
@@ -69,6 +70,20 @@ initial_upload_web_application "/source/path/to/app" "/path/to/app"
 upload_pulumi_stack_state "/path/to/app/state" "project-1" "sit"
 ```
 
+
+#### AWS S3 static website
+
+```bash
+source ./scripts/upload-aws-s3.sh
+
+# Upload the web application
+initial_upload_web_application "s3_bucket_name" "/local/path/to/web/app"
+
+# Upload the state on every Pulumi deployment
+upload_pulumi_stack_state "s3_bucket_name" "project-1" "sit"
+```
+
+
 #### Azure Blog Storage static website
 
 ```bash
@@ -82,29 +97,7 @@ upload_pulumi_stack_state "storage_account_name" "project-1" "sit"
 ```
 
 
-#### AWS S3 static website
-
-```bash
-source ./scripts/upload-aws-s3.sh
-
-# Upload the web application
-...
-
-# Upload the state on every Pulumi deployment
-...
-```
-
-
 
 ## License
 
 `pulumi-stack-viewer` is licensed under a MIT license. Please see the [LICENSE](./LICENSE) file for details.
-
-
-
-
-
-## ToDo
-- test on AWS
-- add how-to for AWS
-- publish to GitHub
